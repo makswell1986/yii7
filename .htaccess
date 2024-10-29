@@ -1,0 +1,13 @@
+RewriteEngine on
+#RewriteRule ^(/+)?$ /web/$1
+
+
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)/?$    index.php?url=$1    [QSA,L]
+
+#RewriteCond %{REQUEST_URI} ^/(js|css|images)/
+#RewriteCond %{DOCUMENT_ROOT}/web%{REQUEST_URI} -f
+RewriteRule ^ /web%{REQUEST_URI} [L]
+#RewriteRule ^(.*)/?$    /web/index.php?url=$1    [QSA,L]
